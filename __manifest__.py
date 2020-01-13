@@ -3,17 +3,16 @@
     'name': "offerStats",
 
     'summary': """
-        This module will be used to offers stats about the most desired and 
-        commented softwares of our app
-    """,
+        This module will be used to offer stats about the most desired and
+        commented softwares of our app.""",
 
     'description': """
-        Module that calculates stats of out app based on the number of comments 
-        each software has and the number of users that have wishlisted the same 
-        software and creates a new stat called "most popular software"
+        Module that calculates stats of our app based on the number of comments
+        each software has and the number of users that have wishlisted the same
+        software, and creates a new stat called "most popular softwares".
     """,
 
-    'author': "My Company",
+    'author': "Equipo 2",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
