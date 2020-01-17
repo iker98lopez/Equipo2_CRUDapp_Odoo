@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <record model="ir.ui.view" id="course_form_view">
-            <field name="name">course.form</field>
-            <field name="model">openacademy.course</field>
+        <record model="ir.ui.view" id="offer_form_view">
+            <field name="name">offer.form</field>
+            <field name="model">offer_stats.offer</field>
             <field name="arch" type="xml">
-                <form string="Course Form">
-            
+                <form string="Offer Form">
+                    <sheet>
+                        <group>
+                            <field name="software"/>
+                            <field name="shop"/>
+                            <field name="basePrice"/>
+                            <field name="discountedPrice"/>
+                            <field name="discount"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
