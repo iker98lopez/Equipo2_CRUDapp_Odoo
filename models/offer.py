@@ -11,8 +11,8 @@ class Offer(models.Model):
     basePrice = fields.Float(string="Base price", digits="6,2")
     discountedPrice = fields.Float(string="Discounted price", digits="6,2")
     discount = fields.Float(string="Discount %", digits="2,0")
-    software = fields.ManyToOne("offer_stats.software", onDelete="cascade", String="Software")
+    software = fields.Many2one("offer_stats.software", String="Software")
     
-    @api.depends('value')
-    def _value_pc(self):
-        self.value2 = float(self.value) / 100
+    #@api.depends('value')
+    #def _value_pc(self):
+    #    self.value2 = float(self.value) / 100
