@@ -1,6 +1,6 @@
-<record model="ir.ui.view" id="user_tree_view">
+<record model="ir.ui.view" id="software_tree_view">
     <field name="name">user.tree</field>
-    <field name="model">offer_stats.user</field>
+    <field name="model">offer_stats.software</field>
     <field name="arch" type="xml">
         <tree string="Software List">
             <field name="name"/>
