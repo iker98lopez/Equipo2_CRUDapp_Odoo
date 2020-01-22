@@ -1,0 +1,11 @@
+<record model="ir.ui.view" id="wish_tree_view">
+    <field name="name">wish.tree</field>
+    <field name="model">offer_stats.wish</field>
+    <field name="arch" type="xml">
+        <tree string="Wish List">
+            <field name="wish_id"/>
+            <field name="software_id"/>
+            <field name="min_price"/>
+        </tree>
+    </field>
+</record>
