@@ -1,0 +1,13 @@
+<record model="ir.ui.view" id="offer_tree_view">
+    <field name="name">offer.tree</field>
+    <field name="model">offer_stats.offer</field>
+    <field name="arch" type="xml">
+        <tree string="Offer List">
+            <field name="shop"/>
+            <field name="basePrice"/>
+            <field name="discountedPrice"/>
+            <field name="discount"/>
+            <field name="software"/>
+        </tree>
+    </field>
+</record>
