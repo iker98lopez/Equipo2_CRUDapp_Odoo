@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_list_offers">
+            <field name="name">Offers</field>
+            <field name="res_model">offer_stats.offer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first offer</p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_list_softwares">
+            <field name="name">Softwares</field>
+            <field name="res_model">offer_stats.software</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first software</p>
+            </field>
+        </record>
+        <menuitem id="main_offer_stats_menu" name="Offer Stats" sequence="10" action="action_list_offers"/>
+        <menuitem id="offer_stats_menu" name="Offer Stats" parent="main_offer_stats_menu"/>
+        <menuitem id="softwares_menu" name="Softwares" parent="offer_stats_menu" action="action_list_softwares"/>
+        <menuitem id="offers_menu" name="Offers" parent="offer_stats_menu" action="action_list_offers"/>
+    </data>
+</odoo>
