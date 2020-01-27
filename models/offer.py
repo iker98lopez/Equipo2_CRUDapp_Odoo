@@ -26,7 +26,7 @@ class Offer(models.Model):
                 raise ValidationError("Discount % must be bigger than 0 and lower than 100")
             
     @api.constrains('software')
-    def _check_basePrice_range(self):
+    def _check_software_exists(self):
         for record in self:
             if record.software is not None:
                 raise ValidationError("Offer software must exist")
