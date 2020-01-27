@@ -1,7 +1,7 @@
 <odoo>
     <data>
         <record model="ir.ui.view" id="software_tree_view">
-            <field name="name">user.tree</field>
+            <field name="name">software.tree</field>
             <field name="model">offer_stats.software</field>
             <field name="arch" type="xml">
                 <tree string="Software List">
