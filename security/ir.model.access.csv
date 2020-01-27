@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_offer_stats_offer_stats,offer_stats.offer_stats,model_offer_stats_offer_stats,,1,0,0,0
+access_offer,offer_stats.offer_stats,model_offer_stats_offer_stats,,1,0,0,0
