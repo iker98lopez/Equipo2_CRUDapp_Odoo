@@ -6,6 +6,7 @@ from odoo import models
 from odoo.exceptions import ValidationError 
 class Wish(models.Model):
     _name = 'offer_stats.wish'
+    
     wish_id= fields.Integer(string="Wish_ID")
     software_id = fields.Many2one('offer_stats.software', string="Software_ID", required=True)
     min_price = fields.Float(digits=(5, 2), help='Minimum price to be notified')
@@ -19,8 +20,5 @@ class Wish(models.Model):
     @api.constrains('software_id')
     def _check_software_exists(self):
         for record in self:
-            if record.software_id is not None:
+            if record.software_id is None:
                 raise ValidationError("Software must exist")
-    #@api.depends('value')
-    #def _value_pc(self):
-    #    self.value2 = float(self.value) / 100

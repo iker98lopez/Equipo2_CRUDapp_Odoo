@@ -19,9 +19,31 @@
                 <p class="oe_view_nocontent_create">Create the first software</p>
             </field>
         </record>
+        <record model="ir.actions.act_window" id="action_list_users">
+            <field name="name">Users</field>
+            <field name="res_model">offer_stats.user</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first user</p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_list_wishes">
+            <field name="name">Wishes</field>
+            <field name="res_model">offer_stats.wish</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">There are no wishes</p>
+            </field>
+        </record>
+        
         <menuitem id="main_offer_stats_menu" name="Offer Stats" sequence="10" action="action_list_offers"/>
         <menuitem id="offer_stats_menu" name="Offer Stats" parent="main_offer_stats_menu"/>
         <menuitem id="softwares_menu" name="Softwares" parent="offer_stats_menu" action="action_list_softwares"/>
         <menuitem id="offers_menu" name="Offers" parent="offer_stats_menu" action="action_list_offers"/>
+        <menuitem id="users_management_menu" name="Users Management" parent="main_offer_stats_menu"/>
+        <menuitem id="users_menu" name="Users" parent="users_management_menu" action="action_list_users"/>
+        <menuitem id="wishes_menu" name="Wishes" parent="users_management_menu" action="action_list_wishes"/>
     </data>
 </odoo>
