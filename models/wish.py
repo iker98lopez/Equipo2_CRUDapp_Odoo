@@ -21,6 +21,16 @@ class Wish(models.Model):
         for record in self:
             if record.software_id is not None:
                 raise ValidationError("Software must exist")
+            
+    @api.constrains('wish_id')
+    def _check_wish_id(self):
+        for record in self:
+            if record.wish_id <= 0:
+                raise ValidationError("Base price must be bigger than 0 and lower than 1000")
+            else:
+                for record2 in self:
+                    if record2.wish_id == record.wish_id:
+                        raise ValidationError("Wish id must not exist")
     #@api.depends('value')
     #def _value_pc(self):
     #    self.value2 = float(self.value) / 100
