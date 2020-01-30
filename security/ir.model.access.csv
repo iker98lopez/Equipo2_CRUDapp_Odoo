@@ -1,1 +1,13 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_read_offer,access_read_offer,offer_stats_offer,,1,0,0,0
+access_read_software,access_read_software,offer_stats.software,,1,0,0,0
+access_read_wish,access_read_wish,offer_stats.wish,,1,0,0,0
+access_read_user,access_read_user,offer_stats.user,,1,0,0,0
+access_write_offer,access_write_offer,offer_stats.offer,group_write_all,1,1,1,0
+access_write_software,access_write_software,offer_stats.software,group_write_all,1,1,1,0
+access_write_wish,access_write_wish,offer_stats.wish,group_write_all,1,1,1,0
+access_write_user,access_write_user,offer_stats.user,group_write_all,1,1,1,0
+access_all_offer,access_all_offer,offer_stats.offer,group_unlink_all,1,1,1,1
+access_all_software,access_all_software,offer_stats.software,group_unlink_all,1,1,1,1
+access_all_wish,access_all_wish,offer_stats.wish,group_unlink_all,1,1,1,1
+access_all_user,access_all_user,offer_stats.user,group_unlink_all,1,1,1,1

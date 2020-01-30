@@ -7,26 +7,38 @@ from odoo.exceptions import ValidationError
 class Offer(models.Model):
     _name = 'offer_stats.offer'
 
+    offer_id= fields.Integer(string="Offer_ID")
     shop = fields.Char(string="Shop", required=True, help="The shop making the offer")
-    basePrice = fields.Float(string="Base price", digits=(5,2))
-    discountedPrice = fields.Float(string="Discounted Price", digits=(5,2))
+    base_price = fields.Float(string="Base price", digits=(5,2))
+    discounted_price = fields.Float(compute='_compute_discounted_price')
     discount = fields.Float(string="Discount", digits=(3,0))
     software = fields.Many2one("offer_stats.software", string="Software", required=True)
     
-    #@api.constrains('basePrice')
-    #def _check_baseprice_range(self):
-     #   for record in self:
-    #        if record.basePrice < 0 or record.basePrice > 999:
-    #            raise ValidationError("Base price must be bigger than 0 and lower than 1000")
+    @api.depends('basePrice', 'discount')
+    def _compute_discounted_price(self):
+        for record in self:
+            record.discountedPrice = record.basePrice - (record.basePrice * record.discount / 100)
+    
+    @api.constrains('offer_id')
+    def _check_baseprice_range(self):
+       for record in self:
+            if record.offer_id <= 0:
+                raise ValidationError("Base price must be bigger than 0")
+    
+    @api.constrains('basePrice')
+    def _check_baseprice_range(self):
+       for record in self:
+            if record.basePrice < 0 or record.basePrice > 999:
+                raise ValidationError("Base price must be bigger than 0 and lower than 1000")
             
-    #@api.constrains('discount')
-    #def _check_discount_range(self):
-    #    for record in self:
-    #        if record.discount < 0 or record.discount > 100:
-    #            raise ValidationError("Discount % must be bigger than 0 and lower than 100")
+    @api.constrains('discount')
+    def _check_discount_range(self):
+        for record in self:
+            if record.discount < 0 or record.discount > 100:
+                raise ValidationError("Discount % must be bigger than 0 and lower than 100")
             
-    #@api.constrains('software')
-    #def _check_software_exists(self):
-    #    for record in self:
-    #        if record.software is None:
-    #            raise ValidationError("Offer software must exist")
+    @api.constrains('software')
+    def _check_software_exists(self):
+        for record in self:
+            if record.software is None:
+                raise ValidationError("Offer software must exist")

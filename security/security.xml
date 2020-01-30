@@ -1,5 +1,16 @@
 <odoo>
     <data>
-        
+        <record id="group_read_all" model="res.groups">
+            <field name="name">ReadAll</field>
+            <field name="comment">Default group granting reading permission in all the models</field>
+        </record>
+        <record id="group_write_all" model="res.groups">
+            <field name="name">WriteAll</field>
+            <field name="comment">Group granting writing permission in all the models</field>
+        </record>
+        <record id="group_unlink_all" model="res.groups">
+            <field name="name">UnlinkAll</field>
+            <field name="comment">Group granting unlinking permission in all the models</field>
+        </record>
     </data>
 </odoo>
