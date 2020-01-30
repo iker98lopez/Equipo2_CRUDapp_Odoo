@@ -19,7 +19,12 @@ class Wish(models.Model):
     @api.constrains('software_id')
     def _check_software_exists(self):
         for record in self:
-            if record.software_id is not None:
+            exist = false
+            for record2 in record.software_id:
+                if record.software_id == record2:
+                    exist = true
+                    break
+            if not exist:
                 raise ValidationError("Software must exist")
             
     @api.constrains('wish_id')
