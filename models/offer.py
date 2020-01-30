@@ -14,21 +14,21 @@ class Offer(models.Model):
     discount = fields.Float(string="Discount", digits=(3,0))
     software = fields.Many2one("offer_stats.software", string="Software", required=True)
     
-    @api.depends('basePrice', 'discount')
+    @api.depends('base_price', 'discount')
     def _compute_discounted_price(self):
         for record in self:
-            record.discountedPrice = record.basePrice - (record.basePrice * record.discount / 100)
+            record.discountedPrice = record.base_price - (record.base_price * record.discount / 100)
     
     @api.constrains('offer_id')
     def _check_baseprice_range(self):
        for record in self:
             if record.offer_id <= 0:
-                raise ValidationError("Base price must be bigger than 0")
+                raise ValidationError("Offer ID must be bigger than 0")
     
-    @api.constrains('basePrice')
+    @api.constrains('base_price')
     def _check_baseprice_range(self):
        for record in self:
-            if record.basePrice < 0 or record.basePrice > 999:
+            if record.base_price < 0 or record.base_price > 999:
                 raise ValidationError("Base price must be bigger than 0 and lower than 1000")
             
     @api.constrains('discount')

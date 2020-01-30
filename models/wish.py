@@ -17,11 +17,16 @@ class Wish(models.Model):
             if record.min_price < 0 or record.min_price > 999:
                 raise ValidationError("Minimum price must be bigger than 0 and lower than 1000")
             
-    @api.constrains('software_id')
-    def _check_software_exists(self):
-        for record in self:
-            if record.software_id is None:
-                raise ValidationError("Software must exist")
+    #@api.constrains('software_id')
+    #def _check_software_exists(self):
+       # for record in self:
+          #  exist = false
+         #   for record2 in record.software_id:
+        #        if record.software_id == record2:
+       #             exist = true
+      #              break
+     #       if not exist:
+    #            raise ValidationError("Software must exist")
             
     @api.constrains('wish_id')
     def _check_wish_id(self):
