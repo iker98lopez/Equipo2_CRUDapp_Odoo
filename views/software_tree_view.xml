@@ -1,15 +1,21 @@
-<odoo>
-    <data>
-        <record model="ir.ui.view" id="software_tree_view">
-            <field name="name">software.tree</field>
-            <field name="model">offer_stats.software</field>
-            <field name="arch" type="xml">
-                <tree string="Software List">
-                    <field name="name"/>
-                    <field name="sw_type"/>
-                    <field name="offers"/>
-                </tree>
-            </field>
-        </record>
-    </data>
-</odoo>
+<record model="ir.ui.view" id="software_tree_view">
+    <field name="name">software.tree</field>
+    <field name="model">offer_stats.software</field>
+    <field name="arch" type="xml">
+        <tree string="Software List">
+            <field name="name"/>
+            <field name="sw_type"/>
+            <field name="offers"/>
+        </tree>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="software_search_view">
+    <field name="name">software.search</field>
+    <field name="model">offer_stats.software</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+        </search>
+    </field>
+</record>
