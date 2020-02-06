@@ -29,6 +29,12 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/offer_stats.xml',
+        'views/offer_form_view.xml',
+        'views/offer_tree_view.xml',
+        'views/software_form_view.xml',
+        'views/software_tree_view.xml',
+        'views/wish_form_view.xml',
+        'views/wish_tree_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

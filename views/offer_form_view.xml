@@ -10,9 +10,10 @@
                         <group>
                             <field name="software"/>
                             <field name="shop"/>
-                            <field name="basePrice"/>
-                            <field name="discountedPrice"/>
+                            <field name="base_price"/>
+                            <field name="discounted_price"/>
                             <field name="discount"/>
+                            <field name="description"/>
                         </group>
                     </sheet>
                 </form>

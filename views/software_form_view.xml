@@ -8,7 +8,7 @@
                 <form string="Offer Form">
                     <sheet>
                         <group>
-                            <field name="software"/>
+                            <field name="name"/>
                             <field name="sw_type"/>
                             <notebook>
                                 <page string="Offers">

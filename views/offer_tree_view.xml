@@ -1,13 +1,18 @@
-<record model="ir.ui.view" id="offer_tree_view">
-    <field name="name">offer.tree</field>
-    <field name="model">offer_stats.offer</field>
-    <field name="arch" type="xml">
-        <tree string="Offer List">
-            <field name="shop"/>
-            <field name="basePrice"/>
-            <field name="discountedPrice"/>
-            <field name="discount"/>
-            <field name="software"/>
-        </tree>
-    </field>
-</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="offer_tree_view">
+            <field name="name">offer.tree</field>
+            <field name="model">offer_stats.offer</field>
+            <field name="arch" type="xml">
+                <tree string="Offer List">
+                    <field name="software"/>
+                    <field name="shop"/>
+                    <field name="base_price"/>
+                    <field name="discount"/>
+                    <field name="discounted_price"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

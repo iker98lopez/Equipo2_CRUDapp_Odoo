@@ -1,9 +1,14 @@
-<record model="ir.ui.view" id="user_tree_view">
-    <field name="name">user.tree</field>
-    <field name="model">offer_stats.user</field>
-    <field name="arch" type="xml">
-        <tree string="User List">
-            <field name="wishlist"/>
-        </tree>
-    </field>
-</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="user_tree_view">
+            <field name="name">user.tree</field>
+            <field name="model">offer_stats.user</field>
+            <field name="arch" type="xml">
+                <tree string="User List">
+                    <field name="wishlist"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
